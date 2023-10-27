@@ -39,13 +39,14 @@ while True:
             break
         else:
             print("MSG: 올바른 번호를 입력하세요.")
-    if select_num == 1:             #입고
+
+    if select_num == 1:  # 입고
         pass
         # 주차타워 여유공간 Check
         if car_cnt < max_car:
             car_num = input(">>입고: ")
             for i, car in enumerate(tower):
-                if car == "":
+                 if car == "":
                     tower[i] = car_num
                     car_cnt += 1
                     break
@@ -55,8 +56,23 @@ while True:
         # 입고
 
     elif select_num == 2:           #출고
-        pass
+        # 1. 출고 차량번호 입력
+        car_num = input(">>출고: ")
+        if car_num in tower:
+            for i, car in enumerate(tower):
+                if car == car_num:
+                    tower[i] = ""   #차량 제거
+                    car_cnt -= 1    #현재 주차대수 동기화
+                    break
+        else:
+            print("MSG: 해당 번호로 입고 된 차량이 없습니다.")
+        # 2. tower == 출고 차량번호 match
+        # 3. yes: 출고(tower 제거(""), car_cnt-1)
+        # 4. no: MSG(입고 된 차량X)
     elif select_num == 3:           #조회
-        pass
+        print("== 주차 타워 현황 ==")
+        for i in range(len(tower)-1, -1, -1):
+            print(f"    > {i+1}층 {tower[i]}")
     elif select_num == 4:
         print("MSG: 프로그램을 종료합니다.")
+        exit()
