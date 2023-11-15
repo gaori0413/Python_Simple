@@ -8,7 +8,7 @@
 #   로그인 → login_dao
 #               ㄴ 로그인, 로그아웃, ID 찾기, PW 찾기
 
-from project_daum_news.db.common.connection import conn_mongodb
+from db.common.connection import conn_mongodb
 
 
 # 뉴스(제목, 본문, 날짜) 저장

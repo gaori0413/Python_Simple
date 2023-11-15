@@ -59,6 +59,8 @@
 from pymongo import MongoClient
 
 # MongoDB Connection
+
+
 def conn_mongodb():
     # URL, ID, PW
     DB_ID = "root"  # 상수(전체 대문자로 변수명을 사용)
