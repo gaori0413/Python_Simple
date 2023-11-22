@@ -38,7 +38,6 @@ time.sleep(2)
 
 # 3. 페이지 전체 코드 가져오기
 doc_html = driver.page_source
-print(doc_html)
 
 # 4. Selenium → BeutifulSoup
 doc = BeautifulSoup(doc_html, "html.parser")
@@ -59,7 +58,6 @@ print("="*100)
 
 # 6-1. 전체 리뷰 수집
 total_review_cnt = doc.select("span.txt_netizen")[0].get_text()
-print(total_review_cnt)
 
 # 6-2. 전체 리뷰에서 숫자만 추출
 #   - 문자열 슬라이싱
